@@ -1,20 +1,95 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
+import HomeScreen from './HomeScreen';
+
+
+
+
+const Stack = createStackNavigator();
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+        <Stack.Navigator >
+        <Stack.Screen name="HomeScreen" component={HomeScreen}  options={{headerShown:false}}  />
+      
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import 'react-native-gesture-handler';
+// import React from 'react';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+// import { createDrawerNavigator } from '@react-navigation/drawer';
+
+// import HomeScreen from './HomeScreen';
+// import Landing from './Landing';
+
+// const Stack = createStackNavigator();
+// const Drawer = createDrawerNavigator();
+
+// // Stack Navigator component
+// function MainStackNavigator() {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen
+//         name="HomeScreen"
+//         component={HomeScreen}
+//         options={{ headerShown: false }}
+//       />
+//       {/* Add more stack screens here if needed */}
+//     </Stack.Navigator>
+//   );
+// }
+
+// // Drawer Navigator component
+// function DrawerNavigator() {
+//   return (
+//     <Drawer.Navigator>
+//       <Drawer.Screen name="HomePage" component={MainStackNavigator} />
+//       <Drawer.Screen name="Landing" component={Landing} />
+//       {/* Add more drawer screens here if needed */}
+//     </Drawer.Navigator>
+//   );
+// }
+
+// const App = () => {
+//   return (
+//     <NavigationContainer>
+//       <DrawerNavigator />
+//     </NavigationContainer>
+//   );
+// };
+
+// export default App;
+
